@@ -1,5 +1,5 @@
 {
-  "name": "ts-package-template",
+  "name": "market_data_store_parquet",
   "version": "1.0.0",
   "description": "ts-package-tempate Description",
   "main": "./lib/index.js",
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schardtbc/ts-package-template.git"
+    "url": "git+https://github.com/schardtbc/market_data_store_parquet.git"
   },
   "keywords": [],
   "author": "Bruce C. Schardt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/schardtbc/ts-package-template/issues"
+    "url": "https://github.com/schardtbc/market_data_store_parquet/issues"
   },
-  "homepage": "https://github.com/schardtbc/ts-package-template#readme",
+  "homepage": "https://github.com/schardtbc/market_data_store_parquet#readme",
   "devDependencies": {
     "@types/jest": "23.3.11",
     "jest": "23.6.0",
@@ -39,7 +39,5 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
