@@ -60,7 +60,7 @@ async function IEXIntraday( dates: string[]) {
 
     const service = new ModelService();
     const pArray = [];
-    for (const sym of symbolList {
+    for (const sym of symbolList) {
         pArray.length = 0;
         for (const date of dates){
 
