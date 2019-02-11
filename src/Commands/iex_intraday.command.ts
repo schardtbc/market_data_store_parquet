@@ -60,29 +60,37 @@ async function IEXIntraday( dates: string[]) {
 
     const service = new ModelService();
     const pArray = [];
-    for (const sym of symbolList) {
+    for (const sym of symbolList {
+        pArray.length = 0;
         for (const date of dates){
-            pArray.length = 0;
+
             pArray.push(service.queryForDate(sym,date).then( intradayData => {
                 if (intradayData !== undefined && intradayData.length >0) {
-                repository
+                    return repository
                 .save(intradayData)
                 .then(post => {
-                    console.log((new Date()).valueOf() - st)
-                    console.log(`Success Intraday data for ${sym} ${date} saved to database: `);
+                    const dt = (new Date()).valueOf() - st;
+                    console.log(dt,` saved ... ${sym} ${date}`)
+                    return dt;
+                    //console.log(`Success Intraday data for ${sym} ${date} saved to database: `);
                  })
                 .catch(error => {
-                    console.log((new Date()).valueOf() - st)
-                    console.log(`failed: Could not save Intraday data for ${sym} ${date} to database. Error: `)
-                 }); 
-                }               
+                    const dt = (new Date()).valueOf() - st;
+                    console.log(dt,` ......failed  ${sym} ${date}`)
+                    return dt;
+                  //  console.log(`failed: Could not save Intraday data for ${sym} ${date} to database. Error: `)
+                 });
+                 
+                } else {
+                    return 0
+                }             
             }).catch( error => {
                 console.log((new Date()).valueOf() - st)
                 console.log(`failed: Could not save Intraday data for ${sym} ${date} to database. Error: `)
             }))
         }
         await Promise.all(pArray).catch( error => console.log("pa fail")) ;
-        pArray.length = 0;
+        console.log(`date loop complete for ${sym}`);
     } 
     console.log('Done...')
     return 1
